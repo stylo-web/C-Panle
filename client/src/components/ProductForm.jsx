@@ -22,7 +22,7 @@ function ProductForm() {
     const fetchData = async () => {
       try {
         const categoryResponse = await axios.get(
-          "/api/categories"
+          "https://e-commerce-beige-three.vercel.app/api/categories"
         );
         setCategories(categoryResponse.data);
 
@@ -45,7 +45,7 @@ function ProductForm() {
     });
     try {
       const subcategoryResponse = await axios.get(
-        `/api/${categoryId}`
+        `https://e-commerce-beige-three.vercel.app/api/${categoryId}`
       );
       setSubcategories(subcategoryResponse.data);
       setFinishes([]);
@@ -60,7 +60,7 @@ function ProductForm() {
     setFormData({ ...formData, subcategory: subcategoryId, finish: "" });
     try {
       const finishResponse = await axios.get(
-        `/api/${subcategoryId}/finishes`
+        `https://e-commerce-beige-three.vercel.app/api/${subcategoryId}/finishes`
       );
       setFinishes(finishResponse.data);
     } catch (err) {
@@ -93,7 +93,7 @@ function ProductForm() {
         formDataToSubmit.append("images", file);
       });
 
-      await axios.post("/api/products", formDataToSubmit, {
+      await axios.post("https://e-commerce-beige-three.vercel.app/api/products", formDataToSubmit, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

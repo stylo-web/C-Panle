@@ -14,7 +14,7 @@ function EditCategoryForm() {
     const fetchCategory = async () => {
       try {
         const response = await axios.get(
-          `/api/categories/${id}`
+          `https://e-commerce-beige-three.vercel.app/api/categories/${id}`
         );
         const category = response.data.category;
         setFormdata(category);
@@ -52,7 +52,7 @@ function EditCategoryForm() {
 
     try {
       await axios.patch(
-        `/api/categories/${id}`,
+        `https://e-commerce-beige-three.vercel.app/api/categories/${id}`,
         formData,
         {
           headers: {
@@ -106,16 +106,16 @@ function EditCategoryForm() {
             aria-describedby="user_avatar_help"
             id="user_avatar"
           />
-          {formdata.image && (
+          {/* {formdata.image && (
             <div className="mt-3">
               <lable className="block mb-2 text-sm font-medium text-gray-900">CURRENT IMAGE:</lable>
               <img
-                src={`/uploads/${formdata.image}`}
+                src={`https://e-commerce-beige-three.vercel.app/uploads/${formdata.image}`}
                 alt="Current Category"
                 className="w-24 h-24 object-cover rounded-lg mt-2"
               />
             </div>
-          )}
+          )} */}
         </div>
 
         <button

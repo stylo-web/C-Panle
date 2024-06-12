@@ -20,7 +20,7 @@ function EditProduct() {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `/api/${id}/products`
+          `https://e-commerce-beige-three.vercel.app/api/${id}/products`
         );
         const product = response.data;
         setFormData({
@@ -38,7 +38,7 @@ function EditProduct() {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "/api/categories"
+          "https://e-commerce-beige-three.vercel.app/api/categories"
         );
         setCategories(response.data);
       } catch (err) {
@@ -50,7 +50,7 @@ function EditProduct() {
     const fetchSubcategories = async () => {
       try {
         const response = await axios.get(
-          "/api/subcategories"
+          "https://e-commerce-beige-three.vercel.app/api/subcategories"
         );
         setSubcategories(response.data);
       } catch (err) {
@@ -61,7 +61,7 @@ function EditProduct() {
 
     const fetchFinishes = async () => {
       try {
-        const response = await axios.get("/api/finishes");
+        const response = await axios.get("https://e-commerce-beige-three.vercel.app/api/finishes");
         setFinishes(response.data);
       } catch (err) {
         console.error("Error fetching finishes:", err);
@@ -103,7 +103,7 @@ function EditProduct() {
 
     try {
       await axios.patch(
-        `/api/${id}/products`,
+        `https://e-commerce-beige-three.vercel.app/api/${id}/products`,
         formDataObj,
         {
           headers: {
@@ -201,7 +201,7 @@ function EditProduct() {
               {formData.images?.map((image, index) => (
                 <img
                   key={index}
-                  src={`/uploads/${image}`}
+                  src={`https://e-commerce-beige-three.vercel.app/uploads/${image}`}
                   alt={`Image ${index + 1}`}
                   className="w-12 h-12 rounded-lg object-cover mt-2 mr-2"
                 />

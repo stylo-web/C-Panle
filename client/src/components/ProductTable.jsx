@@ -11,7 +11,7 @@ function ProductTable() {
     const fetchFinishes = async () => {
       try {
         const response = await axios.get(
-          "/api/products/all"
+          "https://e-commerce-beige-three.vercel.app/api/products/all"
         );
         setProducts(response.data);
       } catch (err) {
@@ -25,7 +25,7 @@ function ProductTable() {
 
   const handleDelete = async (productId) => {
     try {
-      await axios.delete(`/api//${productId}/products`);
+      await axios.delete(`https://e-commerce-beige-three.vercel.app/api//${productId}/products`);
       setProducts(products.filter((product) => product._id !== productId));
     } catch (err) {
       console.error(err);
@@ -96,7 +96,7 @@ function ProductTable() {
                     <div className=" flex">
                       <img
                         key={index}
-                        src={`/uploads/${image}`}
+                        src={`https://e-commerce-beige-three.vercel.app/uploads/${image}`}
                         alt={`Product Image ${index + 1}`}
                         className="w-8 h-8 rounded-lg  mr-2 mt-1"
                       />

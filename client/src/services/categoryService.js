@@ -1,7 +1,7 @@
 // services/categoryService.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api/categories';
+const API_URL = 'https://e-commerce-beige-three.vercel.app/api/categories';
 
 export const fetchCategories = async () => {
     try {

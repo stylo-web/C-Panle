@@ -11,7 +11,7 @@ function Editfinish() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`/api//finishes/${id}`, {
+      await axios.patch(`https://e-commerce-beige-three.vercel.app/api//finishes/${id}`, {
         name: finish,
       });
     } catch (err) {

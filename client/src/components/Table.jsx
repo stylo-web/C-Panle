@@ -11,7 +11,7 @@ function Table() {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "/api/categories"
+          "https://e-commerce-beige-three.vercel.app/api/categories"
         );
         setCategories(response.data);
       } catch (err) {
@@ -25,7 +25,7 @@ function Table() {
 
   const handleDelete = async (categoryId) => {
     try {
-      await axios.delete(`/api/categories/${categoryId}`);
+      await axios.delete(`https://e-commerce-beige-three.vercel.app/api/categories/${categoryId}`);
       setCategories((prevCategories) =>
         prevCategories.filter((category) => category._id !== categoryId)
       );
@@ -87,7 +87,7 @@ function Table() {
                   <td className="px-6 py-4">
                     {category?.image && (
                       <img
-                        src={`/uploads/${category.image}`}
+                        src={`https://e-commerce-beige-three.vercel.app/uploads/${category.image}`}
                         alt={category.name}
                         className="w-8 h-8 rounded-lg"
                       />

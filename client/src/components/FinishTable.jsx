@@ -10,7 +10,7 @@ function FinishTable() {
   useEffect(() => {
     const fetchFinishes = async () => {
       try {
-        const response = await axios.get("/api/finishes");
+        const response = await axios.get("https://e-commerce-beige-three.vercel.app/api/finishes");
         setFinishes(response.data);
       } catch (err) {
         console.error(err);
@@ -23,7 +23,7 @@ function FinishTable() {
 
   const handleDelete = async (finishID) => {
     try {
-      await axios.delete(`/api/finishes/${finishID}`);
+      await axios.delete(`https://e-commerce-beige-three.vercel.app/api/finishes/${finishID}`);
       setFinishes(finishes.filter((finish) => finish._id !== finishID));
     } catch (err) {
       console.error(err);

@@ -14,7 +14,7 @@ function SubcategoryTable() {
     const fetchSubcategories = async () => {
       try {
         const response = await axios.get(
-          "/api/subcategories"
+          "https://e-commerce-beige-three.vercel.app/api/subcategories"
         );
         setSubcategories(response.data);
       } catch (err) {
@@ -29,7 +29,7 @@ function SubcategoryTable() {
   const handleDelete = async (subcategoryId) => {
     try {
       await axios.delete(
-        `/api/subcategories/${subcategoryId}`
+        `https://e-commerce-beige-three.vercel.app/api/subcategories/${subcategoryId}`
       );
       setSubcategories(
         subcategories.filter((subcategory) => subcategory._id !== subcategoryId)

@@ -27,7 +27,7 @@ const SubCategoryForm = () => {
 
     try {
       await axios.post(
-        `/api/${selectedCategory}/subcategories`,
+        `https://e-commerce-beige-three.vercel.app/api/${selectedCategory}/subcategories`,
         { categoryId: selectedCategory, size }
       );
       console.log("Subcategory added successfully");

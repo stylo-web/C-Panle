@@ -25,7 +25,7 @@ function CategoryForm() {
 
     try {
       const response = await axios.post(
-        "/api/categories",
+        "https://e-commerce-beige-three.vercel.app/api/categories",
         formData,
         {
           headers: {

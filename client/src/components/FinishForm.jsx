@@ -19,7 +19,7 @@ const SubCategoryForm = () => {
         setCategories(categories);
         if (categories) {
           const subcategories = await axios.get(
-            `/api/${selectedCategory}`
+            `https://e-commerce-beige-three.vercel.app/api/${selectedCategory}`
           );
           setSubcategories(subcategories.data);
         }
@@ -36,7 +36,7 @@ const SubCategoryForm = () => {
 
     try {
       await axios.post(
-        `/api/${selectedSubcategory}/finishes`,
+        `https://e-commerce-beige-three.vercel.app/api/${selectedSubcategory}/finishes`,
         {
           name: finishname,
           subcategoryId: selectedSubcategory,
